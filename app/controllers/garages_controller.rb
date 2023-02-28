@@ -1,6 +1,7 @@
 class GaragesController < ApplicationController
   # before_action :set_garage
 
+
   def index
     @garages = Garage.all
   end

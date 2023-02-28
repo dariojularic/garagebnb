@@ -1,9 +1,13 @@
+
+
+
+
 <h1>Here are the garages</h1>
 
 <% @garages.each do |garage| %>
   <p>
-    <%= garage.user.email %>
-    <%= garage.location %>
+
+    <%= link_to garage.location, garage_path(garage) %>
     <%= garage.description %>
     <%= garage.price %> €
   </p>
