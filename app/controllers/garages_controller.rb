@@ -1,6 +1,6 @@
 class GaragesController < ApplicationController
+  # before_action :set_garage
 
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
   def index
     @garages = Garage.all
   end
@@ -10,7 +10,7 @@ class GaragesController < ApplicationController
   end
 
   def show
-    @garage = Garage.find(params[:id])
+    set_garage
   end
 
   def create
@@ -19,24 +19,24 @@ class GaragesController < ApplicationController
     if @garage.save
       redirect_to garages_path(@garage)
     else
-      render :new
+      render :new, :unproccesable_entity
     end
   end
 
   def edit
-    @garage = Garage.find(params[:id])
+    set_garage
   end
 
   def update
-    @garage = Garage.find(params[:id])
+    set_garage
     @garage.update(garage_params)
     redirect_to garages_path(@garage)
   end
 
   def destroy
-    @garage = Garage.find(params[:id])
+    set_garage
     @garage.destroy
-    redirect_to garages_path
+    redirect_to garages_path, :see_other
   end
 
   private
@@ -45,7 +45,7 @@ class GaragesController < ApplicationController
     params.require(:garage).permit(:location, :description, :price)
   end
 
-  def set_user
-    @user = User.find(params[:id])
+  def set_garage
+    @garage = Garage.find(params[:id])
   end
 end
