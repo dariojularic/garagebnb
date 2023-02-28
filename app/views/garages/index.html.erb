@@ -1,14 +1,19 @@
-
-
-
-
-<h1>Here are the garages</h1>
+<div>
+  <h1 class="indexh1">Garage Search Results</h1>
+</div>
 
 <% @garages.each do |garage| %>
-  <p>
+<p>
+</p>
 
-    <%= link_to garage.location, garage_path(garage) %>
-    <%= garage.description %>
-    <%= garage.price %> €
-  </p>
+<div class="container">
+  <div class="card-product">
+    <img src="https://www.parking.net/Upload/AboutParking/parking-garage2_Original.jpg" />
+    <div class="card-product-infos">
+      <h2><%= link_to garage.location, garage_path(garage) %></h2>
+        <p><%= garage.description %> </p>
+        <p><%= garage.price %>€</p>
+    </div>
+  </div>
+</div>
 <% end %>

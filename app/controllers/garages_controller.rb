@@ -20,7 +20,7 @@ class GaragesController < ApplicationController
     if @garage.save
       redirect_to garages_path(@garage)
     else
-      render :new, :unproccesable_entity
+      render :new, status: :unproccesable_entity
     end
   end
 
@@ -37,7 +37,7 @@ class GaragesController < ApplicationController
   def destroy
     set_garage
     @garage.destroy
-    redirect_to garages_path, :see_other
+    redirect_to garages_path, status: :see_other
   end
 
   private
