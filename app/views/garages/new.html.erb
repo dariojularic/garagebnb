@@ -1,18 +1,15 @@
-
-<%= form_for @garage do |f| %>
-  <p>
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </p>
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-  <% end %>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Create a new list</h3>
+        <%= simple_form_for @garage do |f| %>
+          <%= f.input :location %>
+          <%= f.input :description %>
+          <%= f.input :price %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
