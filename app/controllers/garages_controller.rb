@@ -1,4 +1,6 @@
 class GaragesController < ApplicationController
+
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   def index
     @garages = Garage.all
   end
@@ -15,7 +17,7 @@ class GaragesController < ApplicationController
     @garage = Garage.new(garage_params)
     @garage.user = current_user
     if @garage.save
-      redirect_to garage_path(@garage)
+      redirect_to garages_path(@garage)
     else
       render :new
     end
@@ -28,7 +30,7 @@ class GaragesController < ApplicationController
   def update
     @garage = Garage.find(params[:id])
     @garage.update(garage_params)
-    redirect_to garage_path(@garage)
+    redirect_to garages_path(@garage)
   end
 
   def destroy
@@ -37,7 +39,13 @@ class GaragesController < ApplicationController
     redirect_to garages_path
   end
 
+  private
+
   def garage_params
-    params.require(:garage).permit(:location, :price, :description, :user_id)
+    params.require(:garage).permit(:location, :description, :price)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
