@@ -1,5 +1,19 @@
-<h1>This is the show page</h1>
-
+<h1><%= @garage.location %></h1>
+<div>
 <%= @garage.location %> <br>
+</div>
+
+<div>
 <%= @garage.price %> <br>
+</div>
+
+<div>
 <%= @garage.description %> <br>
+</div>
+
+<ul>
+  <li><%= link_to "Destroy", garage_path(@garage), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
