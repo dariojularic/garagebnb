@@ -1,1 +1,11 @@
+<h1>Here are the garages</h1>
+
+<% @garages.each do |garage| %>
+  <p>
+    <%= garage.user.email %>
+    <%= garage.location %>
+    <%= garage.description %>
+    <%= garage.price %> €
+  </p>
+<% end %>
 
