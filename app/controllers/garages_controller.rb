@@ -36,4 +36,8 @@ class GaragesController < ApplicationController
     @garage.destroy
     redirect_to garages_path
   end
+
+  def garage_params
+    params.require(:garage).permit(:location, :price, :description, :user_id)
+  end
 end
