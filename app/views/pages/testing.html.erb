@@ -1,0 +1,25 @@
+<div>
+  <div class="row d-flex justify-content-between">
+    <div class="banner col-7" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path "garage1.jpg" %>);">
+      <div class="banner-text">
+        <h1>Find your parking garage!</h1>
+        <p>Your neighbor might have a garage for you</p>
+      </div>
+    </div>
+
+    <div class="col-5 p-3"><p>This is a paragraph about the search form</p><%= form_tag garages_path, method: :get do %>
+      <div class="row m-3">
+        <%= label_tag :country %>
+        <%= text_field_tag :country %>
+      </div>
+      <div class="row m-3">
+        <%= label_tag :city %>
+        <%= text_field_tag :city %>
+      </div>
+      <div class="row m-3">
+        <%= submit_tag "Search" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

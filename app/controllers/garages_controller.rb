@@ -18,9 +18,9 @@ class GaragesController < ApplicationController
     @garage = Garage.new(garage_params)
     @garage.user = current_user
     if @garage.save
-      redirect_to garages_path(@garage)
+      redirect_to garage_path(@garage)
     else
-      render :new, status: :unproccesable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -31,7 +31,7 @@ class GaragesController < ApplicationController
   def update
     set_garage
     @garage.update(garage_params)
-    redirect_to garages_path(@garage)
+    redirect_to garage_path
   end
 
   def destroy
