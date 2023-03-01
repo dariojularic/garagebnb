@@ -12,16 +12,18 @@
           <%= f.input :location %>
           <%= f.input :description %>
           <%= f.input :price %>
-          <%= f.submit class: 'btn btn-flat' %>
-        <% end %>
-        <ul>
-  <% if current_user == @garage.user %>
-    <li><%= link_to "Destroy", garage_path(@garage), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></li>
-    <li><%= link_to "Edit", edit_garage_path(@garage) %></li>
-  <% else %>
-    <li><%= link_to "Book", new_garage_booking_path(@garage) %></li>
+
+
+
+      <% if current_user == @garage.user %>
+          <%= link_to "Destroy", garage_path(@garage), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-flat' %>
+          <%= link_to "Edit", edit_garage_path(@garage), class: 'btn btn-flat' %>
+         
+      <% else %>
+          <%= link_to "Book", new_garage_booking_path(@garage), class: 'btn btn-flat' %>
+    <% end %>
   <% end %>
-</ul>
+
       </div>
     </div>
   </div>

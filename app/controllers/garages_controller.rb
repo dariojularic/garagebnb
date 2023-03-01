@@ -31,7 +31,7 @@ class GaragesController < ApplicationController
   def update
     set_garage
     @garage.update(garage_params)
-    redirect_to garage_path
+    redirect_to garages_path, status: :see_other
   end
 
   def destroy
