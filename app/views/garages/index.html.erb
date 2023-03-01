@@ -3,11 +3,8 @@
   <h1 class="indexh1">Garage Search Results</h1>
 </div>
 
-<% @garages.each do |garage| %>
-<p>
-</p>
-
 <div class="container">
+<% @garages.each do |garage| %>
   <div class="card-product">
     <img src="https://www.parking.net/Upload/AboutParking/parking-garage2_Original.jpg" />
     <div class="card-product-infos">
@@ -16,5 +13,5 @@
         <p><%= garage.price %>€</p>
     </div>
   </div>
-</div>
 <% end %>
+</div>
