@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :set_garage, only: [:new, :create]
+
   def index
     @bookings = Booking.all
   end
@@ -10,12 +12,22 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.garage = Garage.find(params[:garage_id])
+    @booking.garage = @garage
     @booking.user = current_user
     if @booking.save
       redirect_to bookings_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:date)
+  end
+
+  def set_garage
+    @garage = Garage.find(params[:garage_id])
   end
 end

@@ -1,0 +1,12 @@
+<h1>Welcome, <%= @user.email %></h1>
+<% @garages.each do |garage| %>
+<h2><%= garage.location %></h2>
+<h3>Bookings made for your garage</h3>
+<ul>
+  <% garage.bookings.each do |booking| %>
+    <li>
+      <%= booking.user.email %>
+      <%= booking.date %>
+    </li>
+  <% end %>
+<% end %>

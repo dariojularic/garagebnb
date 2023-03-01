@@ -1,4 +1,4 @@
-<h1><%= @garage.location %></h1>
+<h1><%= link_to @garage.location, new_garage_booking_path(@garage) %></h1>
 <div>
 <%= @garage.location %> <br>
 </div>
