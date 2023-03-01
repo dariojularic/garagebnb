@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :garages, dependent: :destroy
   has_many :bookings, dependent: :destroy
-  validates :name, presence: true
+  # validates :name, presence: true
 end
