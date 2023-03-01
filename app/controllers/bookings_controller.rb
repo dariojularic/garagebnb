@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.garage = @garage
     @booking.user = current_user
     if @booking.save
-      redirect_to bookings_path
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
