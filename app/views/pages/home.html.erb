@@ -4,31 +4,40 @@
     <div class="container">
       <h1>Le Wagon brings tech skills to creative people!</h1>
       <p>Change your life and learn to code at one of our campuses around the world.</p>
+
       <a class="btn-primary" href="#">Apply now!</a>
     </div>
   </div>
 
   <!-- code a "How it works" section -->
   <div class="container">
-    <h2 class="text-center">How it works</h2>
+    <h2 class="text-center">How does GarageBnB work?</h2>
     <div class="cards">
 
       <div class="card">
-        <img src="images/apply.svg" alt="">
-        <h4>Apply</h4>
-        <p>First apply to one of our campuses around the world.</p>
+        <img src= <%= asset_path "garage1.jpg" %> alt="">
+        <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+        <%= button_to "Login", new_user_session_path %>
+        <h4>Sign Up</h4>
+        <p>Sign up for an account. It is totally free (no credit card need).</p>
       </div>
 
       <div class="card">
-        <img src="images/learn.svg" alt="">
-        <h4>Learn to code</h4>
-        <p>Learn Ruby on Rails, Javascript, SQL &amp; much more!</p>
+        <img src= <%= asset_path "garage1.jpg" %> alt="">
+        <h4>Search</h4>
+        <p>Search for a parking bay in your chosen destination.</p>
       </div>
 
       <div class="card">
-        <img src="images/product.svg" alt="">
-        <h4>Build products</h4>
-        <p>Finally you will be able to bring your ideas to life.</p>
+        <img src= <%= asset_path "garage1.jpg" %> alt="">
+        <h4>Book</h4>
+        <p>Book a parking bay through our easy to use interface.</p>
+      </div>
+
+      <div class="card">
+        <img src= <%= asset_path "garage1.jpg" %> alt="">
+        <h4>Host</h4>
+        <p>If you have a parking bay to rent, then host it on our site.</p>
       </div>
 
     </div>
@@ -41,7 +50,7 @@
       <a href="#"><i class="fab fa-fw fa-github"></i></a>
       <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
       <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
-      <p>This website was coded with <i class="fas fa-heart"></i> at Le Wagon.</p>
+      <p>This website was coded by the dream team (Dario & Rob) <i class="fas fa-heart"></i></p>
 
     </div>
   </div>
