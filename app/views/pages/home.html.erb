@@ -1,25 +1,51 @@
-<div>
-  <div class="row d-flex justify-content-between">
-    <div class="banner col-7" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path "garage1.jpg" %>);">
-      <div class="banner-text">
-        <h1>Find your parking garage!</h1>
-        <p>Your neighbor might have a garage for you</p>
-      </div>
-    </div>
-
-    <div class="col-5 p-3"><p>This is a paragraph about the search form</p><%= form_tag garages_path, method: :get do %>
-      <div class="row m-3">
-        <%= label_tag :country %>
-        <%= text_field_tag :country %>
-      </div>
-      <div class="row m-3">
-        <%= label_tag :city %>
-        <%= text_field_tag :city %>
-      </div>
-      <div class="row m-3">
-        <%= submit_tag "Search" %>
-        <% end %>
-      </div>
+<body>
+  <!-- code a Hero / Banner section -->
+  <div class="banner" style="background-image: url(<%= asset_path "garage1.jpg" %>);">
+    <div class="container">
+      <h1>Le Wagon brings tech skills to creative people!</h1>
+      <p>Change your life and learn to code at one of our campuses around the world.</p>
+      <a class="btn-primary" href="#">Apply now!</a>
     </div>
   </div>
-</div>
+
+  <!-- code a "How it works" section -->
+  <div class="container">
+    <h2 class="text-center">How it works</h2>
+    <div class="cards">
+
+      <div class="card">
+        <img src="images/apply.svg" alt="">
+        <h4>Apply</h4>
+        <p>First apply to one of our campuses around the world.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/learn.svg" alt="">
+        <h4>Learn to code</h4>
+        <p>Learn Ruby on Rails, Javascript, SQL &amp; much more!</p>
+      </div>
+
+      <div class="card">
+        <img src="images/product.svg" alt="">
+        <h4>Build products</h4>
+        <p>Finally you will be able to bring your ideas to life.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- code a footer -->
+  <div class="footer">
+    <div class="links">
+      <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-fw fa-github"></i></a>
+      <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
+      <p>This website was coded with <i class="fas fa-heart"></i> at Le Wagon.</p>
+
+    </div>
+  </div>
+
+
+
+</body>
