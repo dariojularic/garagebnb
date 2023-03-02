@@ -1,4 +1,4 @@
-<h1>Welcome, <%= @user.email %></h1>
+<h1>Welcome, <%= @user.first_name %></h1>
 
 <br>
 <div>
@@ -6,9 +6,9 @@
 <% @user.bookings.each do |booking| %>
   <ul>
     <li>City Name:  <%= booking.garage.city %></li>
-      <li>Street Name:  <%= booking.garage.street %></li>
-      <li>Booked from:  <%= booking.start_date %></li>
-      <li>Booked to:  <%= booking.end_date %></li>
+    <li>Street Name:  <%= booking.garage.street %></li>
+    <li>Booked From:  <%= booking.start_date %></li>
+    <li>Booked To:  <%= booking.end_date %></li>
   </ul>
 <% end %>
 </div>
@@ -17,11 +17,11 @@
 <% @garages.each do |garage| %>
   <% garage.bookings.each do |booking| %>
     <ul>
-      <li><%= garage.city %></li>
-      <li><%= garage.street %></li>
-      <li><%= booking.user.email %></li>
-      <li><%= booking.start_date %></li>
-      <li><%= booking.end_date %></li>
+      <li>Contact Details:  <%= booking.user.email %></li>
+      <li>City Name:  <%= booking.garage.city %></li>
+      <li>Street Name:  <%= booking.garage.street %></li>
+      <li>Booked From:  <%= booking.start_date %></li>
+      <li>Booked To:  <%= booking.end_date %></li>
     </ul>
   <% end %>
 <% end %>
