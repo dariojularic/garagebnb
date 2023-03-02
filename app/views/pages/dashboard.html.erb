@@ -1,29 +1,27 @@
 <h1>Welcome, <%= @user.email %></h1>
 
 <br>
+<div>
 <h3>Your bookings</h3>
 <% @user.bookings.each do |booking| %>
   <ul>
-    <li>
-      <%= booking.garage.city %>
-      <%= booking.garage.street %>
-      <%= booking.start_date %>
-      <%= booking.end_date %>
-    </li>
+    <li>City Name:  <%= booking.garage.city %></li>
+      <li>Street Name:  <%= booking.garage.street %></li>
+      <li>Booked from:  <%= booking.start_date %></li>
+      <li>Booked to:  <%= booking.end_date %></li>
   </ul>
 <% end %>
+</div>
 
 <h3>Bookings made for your garage</h3>
 <% @garages.each do |garage| %>
   <% garage.bookings.each do |booking| %>
     <ul>
-      <li>
-        <%= garage.city %>
-        <%= garage.street %>
-        <%= booking.user.email %>
-        <%= booking.start_date %>
-        <%= booking.end_date %>
-      </li>
+      <li><%= garage.city %></li>
+      <li><%= garage.street %></li>
+      <li><%= booking.user.email %></li>
+      <li><%= booking.start_date %></li>
+      <li><%= booking.end_date %></li>
     </ul>
   <% end %>
 <% end %>
