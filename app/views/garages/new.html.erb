@@ -7,7 +7,8 @@
       <div class="bg-white rounded p-3 shadow">
         <h3 class="h3new">Create a new Garage for hosting</h3>
         <%= simple_form_for @garage do |f| %>
-          <%= f.input :location %>
+          <%= f.input :city %>
+          <%= f.input :street %>
           <%= f.input :description %>
           <%= f.input :price %>
           <%= f.submit class: 'btn btn-flat' %>

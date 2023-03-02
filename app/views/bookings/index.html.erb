@@ -3,8 +3,9 @@
   <% @bookings.each do |booking| %>
     <li>
       <%= booking.user.email %>
-      <%= booking.garage.location %>
-      <%= booking.date %>
+      <%= booking.garage.street %>
+      <%= booking.start_date %>
+      <%= booking.end_date %>
     </li>
   <% end %>
 </ul>
