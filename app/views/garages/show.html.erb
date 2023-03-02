@@ -17,8 +17,8 @@
 
 
       <% if current_user == @garage.user %>
-          <%= link_to "Delete", garage_path(@garage), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-flat' %>
-          <%= link_to "Edit", edit_garage_path(@garage), class: 'btn btn-flat' %>
+        <center><%= link_to "Delete", garage_path(@garage), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-flat' %>
+          <%= link_to "Edit", edit_garage_path(@garage), class: 'btn btn-flat' %></center>
 
       <% else %>
           <%= link_to "Book", new_garage_booking_path(@garage), class: 'btn btn-flat' %>

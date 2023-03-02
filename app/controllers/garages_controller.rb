@@ -17,8 +17,9 @@ class GaragesController < ApplicationController
     @garage = Garage.new(garage_params)
     @garage.user = current_user
     if @garage.save
-      flash[:notice] = render_to_string(partial: "shared/alert")
-      # redirect_to garage_path(@garage)
+      # flash[:notice] = render_to_string(partial: "shared/alert")
+      sleep(0.8)
+      redirect_to garages_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,19 +32,21 @@ class GaragesController < ApplicationController
   def update
     set_garage
     @garage.update(garage_params)
+    sleep(0.8)
     redirect_to garages_path, status: :see_other
   end
 
   def destroy
     set_garage
     @garage.destroy
+    sleep(0.8)
     redirect_to garages_path, status: :see_other
   end
 
   private
 
   def garage_params
-    params.require(:garage).permit(:city, :street, :description, :price, :image)
+    params.require(:garage).permit(:city, :street, :description, :price, :photo)
   end
 
   def set_garage

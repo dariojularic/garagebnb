@@ -6,12 +6,13 @@
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
         <h3 class="h3new">Create a new Garage for hosting</h3>
-        <%= simple_form_for @garage do |f| %>
+        <%= simple_form_for @garage, html: { data: { controller: "button", action: "submit->button#submit" }} do |f| %>
           <%= f.input :city %>
           <%= f.input :street %>
           <%= f.input :description %>
           <%= f.input :price %>
-          <%= f.submit class: 'btn btn-flat' %>
+          <%= f.input :photo, as: :file %>
+          <center><%= f.button :submit, data: { button_target: "button"}, value: "Create", class: 'btn btn-flat' %></center>
         <% end %>
       </div>
     </div>
