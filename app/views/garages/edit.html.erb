@@ -7,12 +7,13 @@
       <div class="bg-white rounded p-3 shadow">
         <h3 class="h3new">Edit your garage</h3>
           <center><img src= <%= asset_path "garage3.jpg" %> alt="" class= "gcard"></center>
-        <%= simple_form_for @garage do |f| %>
+        <%= simple_form_for @garage, html: { data: { controller: "button", action: "submit->button#update" }} do |f| %>
           <%= f.input :city %>
           <%= f.input :street %>
           <%= f.input :description %>
           <%= f.input :price %>
-          <%= f.submit class: 'btn btn-flat' %>
+          <%= f.input :photo, as: :file %>
+         <center><%= f.button :submit, data: { button_target: "updatebutton"}, value: "Update Garage", class: 'btn btn-flat' %></center>
         <% end %>
       </div>
     </div>
