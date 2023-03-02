@@ -4,7 +4,14 @@
       <h1>GarageBnB</h1>
       <p>Taking the stress and time out of finding a parking bay.</p>
      </div>
-
+<%= simple_form_for :search, url: root_path, method: :get do |f| %>
+            <div class="search-form-control form-group">
+              <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+              <button name="button" type="submit" class="btn btn-flat">
+                <i class="fas fa-search"></i> Search for parking
+              </button>
+            </div>
+          <% end %>
 
 
   </div>
@@ -15,25 +22,25 @@
     <div class="cards">
 
       <div class="card">
-        <img src= <%= asset_path "garage2.jpg" %> alt="">
+        <center><img src= <%= asset_path "garage2.jpg" %> alt=""></center>
         <h4>Sign Up</h4>
         <p>Sign up for an account. It is totally free (no credit card need).</p>
       </div>
 
       <div class="card">
-        <img src= <%= asset_path "garage3.jpg" %> alt="">
+        <center><img src= <%= asset_path "garage3.jpg" %> alt=""></center>
         <h4>Search</h4>
         <p>Search for a parking bay in your chosen destination.</p>
       </div>
 
       <div class="card">
-        <img src= <%= asset_path "garage4.jpg" %> alt="">
+        <center><img src= <%= asset_path "garage4.jpg" %> alt=""></center>
         <h4>Book</h4>
         <p>Book a parking bay through our easy to use interface.</p>
       </div>
 
       <div class="card">
-        <img src= <%= asset_path "garage5.jpg" %> alt="">
+        <center><img src= <%= asset_path "garage5.jpg" %> alt=""></center>
         <h4>Host</h4>
         <p>If you have a parking bay to rent, then host it on our site.</p>
       </div>
