@@ -160,3 +160,56 @@
 .h3new {
   text-align: center;
 }
+
+
+
+.search-form-control {
+  position: relative;
+}
+
+.search-form-control .btn {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 8px;
+  color: rgb(103, 104, 103);
+  background:white;
+  transition:zip($lists: absolute)
+
+}
+
+.search-form-control .form-control {
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #E7E7E7;
+  margin-top: 150px;
+}
+
+.search-form-control .form-control:focus {
+  border: 1px solid #4c4d4c;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.search-form-control .btn:hover {
+  opacity: 1;
+  color:rgb(34, 34, 34);
+  background:white;
+  background-color:rgba(0, 0, 255, 0.067);
+}
+
+
+.search-form-control  {
+margin: 20px;
+
+}
+.search-form-control:hover {
+
+}
+#search_query {
+background-color: rgba(255, 255, 255, 0.673);
+}
+
+
+.h1banner {
+  font-size: 64px;
+}
