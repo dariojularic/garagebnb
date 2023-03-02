@@ -7,11 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 User.destroy_all
 # Garage.destroy_all
-user = User.new(email: "someemail@gmail.com", password: "password")
+user = User.new(email: "dario@gmail.com", password: "password")
 user.save!
-10.times do |i|
-  garage = Garage.new(location: Faker::Address.full_address, price: rand(1..100), description: Faker::Lorem.sentence, user: user)
-  # garage.user = user
-  garage.save!
-  puts "Garage #{i + 1} created"
-end
+user1 = User.new(email: "rob@gmail.com", password: "password")
+user.save!
