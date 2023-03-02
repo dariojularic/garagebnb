@@ -17,8 +17,8 @@ class GaragesController < ApplicationController
     @garage = Garage.new(garage_params)
     @garage.user = current_user
     if @garage.save
-      # flash[:notice] = render_to_string(partial: "shared/alert")
-      redirect_to garage_path(@garage)
+      flash[:notice] = render_to_string(partial: "shared/alert")
+      # redirect_to garage_path(@garage)
     else
       render :new, status: :unprocessable_entity
     end
