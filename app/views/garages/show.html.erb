@@ -9,7 +9,8 @@
       <div class="bg-white rounded p-3 shadow">
         <h3 class="h3new"> <%= current_user == @garage.user ? "My garage details" : "Book this garage" %></h3>
         <%= simple_form_for @garage do |f| %>
-          <%= f.input :location %>
+          <%= f.input :city %>
+          <%= f.input :street %>
           <%= f.input :description %>
           <%= f.input :price %>
 
