@@ -15,9 +15,9 @@ class BookingsController < ApplicationController
     @booking.garage = @garage
     @booking.user = current_user
     if @booking.save
-      redirect_to dashboard_path
+      redirect_to garages_path, notice: "Your booking has been successful!"
     else
-      render :new, status: :unprocessable_entity
+      redirect_to garage_path(@garage), alert: "#{@booking.errors.messages[:garagr].first}"
     end
   end
 

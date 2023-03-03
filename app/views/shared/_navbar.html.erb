@@ -1,43 +1,46 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <%# <a class="navbar-brand" href="#">Navbar</a> %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+      <%=link_to "Home", :root, class: "nav-link"%>
+    </li>
+  </ul>
+
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <% if user_signed_in? %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><%=link_to "Account Details", dashboard_path, class: "nav-link"%></li>
-            <li><%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %></li>
-            <li><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
-          </ul>
-      </li>
-
-        <li class="nav-item">
+        <%# <li class="nav-item">
           <%=link_to "Home", :root, class: "nav-link"%>
-        </li>
-
-        <li class="nav-item">
-          <%=link_to "New", new_garage_path, class: "nav-link"%>
-        </li>
-
-        <li class="nav-item">
-          <%=link_to "Lists", garages_path, class: "nav-link"%>
-        </li>
-      </li>
-</ul>
-
-<ul class="navbar-nav me-right mb-2 mb-lg-0">
-
-      <li class="nav-item">
-        <%= link_to "Welcome #{current_user.first_name}", dashboard_path, class: "nav-link" %>
-      </li>
+        <%# </li> %>
       </ul>
 
+      <ul class="navbar-nav me-right mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Welcome #{current_user&.first_name}", dashboard_path, class: "nav-link" %>
+        </li>
+
+        <li class="nav-item dropdown">
+          <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1675603671/f7frsv2n5zbkacfyzr5e.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%=link_to "Account Details", dashboard_path, class: "nav-link"%>
+              <%=link_to "Host a garage", new_garage_path, class: "nav-link"%>
+              <%=link_to "Lists", garages_path, class: "nav-link"%>
+              <%=link_to "Log out", "/users/sign_out", class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+        </li>
+
+      <% else %>
+        <ul class="navbar-nav me-right mb-2 mb-lg-0">
+          <li class="nav-item">
+            <li><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
+          </li>
+      <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-</nav>
+</div>

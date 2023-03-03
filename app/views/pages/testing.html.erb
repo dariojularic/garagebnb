@@ -20,3 +20,25 @@
         </li>
 
         <li><hr class="dropdown-divider"></li>
+
+
+
+        <li class="nav-item">
+          <%=link_to "Host a garage", new_garage_path, class: "nav-link"%>
+        </li>
+
+        <li class="nav-item">
+          <%=link_to "Lists", garages_path, class: "nav-link"%>
+        </li>
+
+
+<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><%=link_to "Account Details", dashboard_path, class: "nav-link"%></li>
+            <li><%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %></li>
+            <li><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
+          </ul>
+      </li>
