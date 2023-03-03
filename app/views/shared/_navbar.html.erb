@@ -3,6 +3,8 @@
   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
     <li class="nav-item">
       <%=link_to "Home", :root, class: "nav-link"%>
+      <li><%=link_to "Lists", garages_path, class: "nav-link" unless user_signed_in? %></li>
+
     </li>
   </ul>
 
@@ -24,7 +26,7 @@
         </li>
 
         <li class="nav-item dropdown">
-          <%= image_tag "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1675603671/f7frsv2n5zbkacfyzr5e.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%=link_to "Account Details", dashboard_path, class: "nav-link"%>
               <%=link_to "Host a garage", new_garage_path, class: "nav-link"%>
@@ -34,6 +36,9 @@
         </li>
 
       <% else %>
+      <ul class="navbar-nav me-left mb-2 mb-lg-0">
+          <li class="nav-item">
+          </li>
         <ul class="navbar-nav me-right mb-2 mb-lg-0">
           <li class="nav-item">
             <li><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
