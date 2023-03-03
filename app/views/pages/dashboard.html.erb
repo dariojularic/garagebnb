@@ -1,61 +1,59 @@
 <div class="banner1" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.parking.net/Upload/AboutParking/parking-garage2_Original.jpg);">
-
-
-<div class="container">
-  <div class="row d-flex justify-content-between">
+  <div class="container" style="min-height: 100vh">
+    <div class="row d-flex justify-content-between">
       <div class="your-bookings col-3">
-      <center><h4 class="p-3"> <strong>Your bookings</strong></h4></center>
-      <% @user.bookings.each do |booking| %>
-        <div class ="pt-2 mt-4 list">
-          <ul>
-            <li><strong>City Name</strong>: <%= link_to booking.garage.city, garage_path(booking.garage) %></li>
-            <li><strong>Street Name</strong>: <%= booking.garage.street %></li>
-            <li><strong>Booked From</strong>: <%= booking.start_date %></li>
-            <li><strong>Booked To</strong>: <%= booking.end_date %></li>
-          </ul>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="bookings-for-you col-3">
-      <center><h4 class="p-3"><strong>Bookings for your garage</strong></h4></center>
-      <% @garages.each do |garage| %>
-        <% garage.bookings.each do |booking| %>
+        <center><h4 class="p-3"> <strong>Your bookings</strong></h4></center>
+        <% @user.bookings.each do |booking| %>
           <div class ="pt-2 mt-4 list">
             <ul>
-              <li><strong>Contact Details</strong>:  <%= booking.user.email %></li>
-              <li><strong>City Name</strong>:  <%= link_to booking.garage.city, garage_path(booking.garage) %></li>
-              <li><strong>Street Name</strong>:  <%= booking.garage.street %></li>
-              <li><strong>Booked From</strong>:  <%= booking.start_date %></li>
-              <li><strong>Booked To</strong>:  <%= booking.end_date %></li>
+              <li><strong>City Name</strong>: <%= link_to booking.garage.city, garage_path(booking.garage) %></li>
+              <li><strong>Street Name</strong>: <%= booking.garage.street %></li>
+              <li><strong>Booked From</strong>: <%= booking.start_date %></li>
+              <li><strong>Booked To</strong>: <%= booking.end_date %></li>
             </ul>
           </div>
         <% end %>
-      <% end %>
-    </div>
+      </div>
 
-    <div class="your-garages col-3">
-      <center><h4 class="p-3"><strong>Your garages</strong></h4></center>
-      <% @user.garages.each do |garage| %>
-        <div class ="pt-2 mt-4 list">
-          <ul>
-            <li><strong>City</strong>: <%= link_to garage.city, garage_path(garage) %></li>
-            <li><strong>Street</strong>: <%= garage.street %></li>
-            <li><strong>Price</strong>: <%= garage.price %>€</li>
-          </ul>
-        </div>
-      <% end %>
+      <div class="bookings-for-you col-3">
+        <center><h4 class="p-3"><strong>Bookings for your garage</strong></h4></center>
+        <% @garages.each do |garage| %>
+          <% garage.bookings.each do |booking| %>
+            <div class ="pt-2 mt-4 list">
+              <ul>
+                <li><strong>Contact Details</strong>:  <%= booking.user.email %></li>
+                <li><strong>City Name</strong>:  <%= link_to booking.garage.city, garage_path(booking.garage) %></li>
+                <li><strong>Street Name</strong>:  <%= booking.garage.street %></li>
+                <li><strong>Booked From</strong>:  <%= booking.start_date %></li>
+                <li><strong>Booked To</strong>:  <%= booking.end_date %></li>
+              </ul>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="your-garages col-3">
+        <center><h4 class="p-3"><strong>Your garages</strong></h4></center>
+        <% @user.garages.each do |garage| %>
+          <div class ="pt-2 mt-4 list">
+            <ul>
+              <li><strong>City</strong>: <%= link_to garage.city, garage_path(garage) %></li>
+              <li><strong>Street</strong>: <%= garage.street %></li>
+              <li><strong>Price</strong>: <%= garage.price %>€</li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="footer">
-    <div class="links">
-      <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-fw fa-github"></i></a>
-      <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
-      <p>This website was coded by the team Dario</p>
-
-    </div>
+  <div class="links">
+    <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-fw fa-github"></i></a>
+    <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
+    <p>This website was coded by the team DRD</p>
   </div>
+</div>
