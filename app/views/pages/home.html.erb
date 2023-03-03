@@ -4,14 +4,17 @@
     <p>Taking the stress and time out of finding a parking bay.</p>
   </div>
 
+
+<div class="search-form-control form-group">
   <%= simple_form_for :search, url: garages_path, method: :get do |f| %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Find a garage"
+      placeholder: "Search for a garage"
     %>
     <%= submit_tag "Search", class: "btn btn-flat" %>
   <% end %>
+</div>
 </div>
 
             <%# <div class="search-form-control form-group">
