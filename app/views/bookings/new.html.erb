@@ -8,8 +8,8 @@
 
 <h3><center>Create a new Booking</center></h3>
 <%= simple_form_for [@garage, @booking] do |f| %>
-  <%= f.input :start_date, html5: true %>
-  <%= f.input :end_date, html5: true %>
+  <%= f.input :start_date, html5: true, value: Date.today %>
+  <%= f.input :end_date, html5: true, value: Date.tomorrow %>
   <%= f.submit class: 'btn btn-flat' %>
 <% end %>
 
