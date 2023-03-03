@@ -11,3 +11,4 @@ user = User.new(email: "dario@gmail.com", password: "password")
 user.save!
 user1 = User.new(email: "rob@gmail.com", password: "password")
 user.save!
+
