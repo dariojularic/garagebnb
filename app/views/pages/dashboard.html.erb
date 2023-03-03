@@ -4,9 +4,9 @@
 <div class="container">
   <div class="row d-flex justify-content-between">
       <div class="your-bookings col-3">
-      <center><h4 class="p-3">Your bookings</h4></center>
+      <center><h4 class="p-3"> <strong>Your bookings</strong></h4></center>
       <% @user.bookings.each do |booking| %>
-        <div class ="pt-2 mt-2" id="list">
+        <div class ="pt-2 mt-4 list">
           <ul>
             <li><strong>City Name</strong>: <%= link_to booking.garage.city, garage_path(booking.garage) %></li>
             <li><strong>Street Name</strong>: <%= booking.garage.street %></li>
@@ -18,10 +18,10 @@
     </div>
 
     <div class="bookings-for-you col-3">
-      <center><h4 class="p-3">Bookings for your garage</h4></center>
+      <center><h4 class="p-3"><strong>Bookings for your garage</strong></h4></center>
       <% @garages.each do |garage| %>
         <% garage.bookings.each do |booking| %>
-          <div class ="pt-2 mt-2" id="list">
+          <div class ="pt-2 mt-4 list">
             <ul>
               <li><strong>Contact Details</strong>:  <%= booking.user.email %></li>
               <li><strong>City Name</strong>:  <%= link_to booking.garage.city, garage_path(booking.garage) %></li>
@@ -35,9 +35,9 @@
     </div>
 
     <div class="your-garages col-3">
-      <center><h4 class="p-3">Your garages</h4></center>
+      <center><h4 class="p-3"><strong>Your garages</strong></h4></center>
       <% @user.garages.each do |garage| %>
-        <div class ="pt-2 mt-2" id="list">
+        <div class ="pt-2 mt-4 list">
           <ul>
             <li><strong>City</strong>: <%= link_to garage.city, garage_path(garage) %></li>
             <li><strong>Street</strong>: <%= garage.street %></li>
