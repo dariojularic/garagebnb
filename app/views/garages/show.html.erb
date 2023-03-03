@@ -2,43 +2,42 @@
 
 <div class="banner1" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.parking.net/Upload/AboutParking/parking-garage2_Original.jpg);">
   <div class="container">
-
-<div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <h3 class="h3new"> <%= current_user == @garage.user ? "My garage details" : "Book this garage" %></h3>
-        <%= simple_form_for @garage do |f| %>
-          <%= f.input :city %>
-          <%= f.input :street %>
-          <%= f.input :description %>
-          <%= f.input :price %>
-
-
-
-      <% if current_user == @garage.user %>
-        <center><%= link_to "Delete", garage_path(@garage), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-flat' %>
-          <%= link_to "Edit", edit_garage_path(@garage), class: 'btn btn-flat' %></center>
-
-      <% elsif current_user %>
-          <%= link_to "Book", new_garage_booking_path(@garage), class: 'btn btn-flat' %>
-    <% end %>
-  <% end %>
-
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md-6 offset-lg-3">
+          <div class="bg-white rounded p-4 shadow">
+            <center><h3 class="h3new"> <%= current_user == @garage.user ? "My garage details" : "Book this garage" %></h3></center>
+            <hr>
+            <h5><strong>City</strong></h5>
+            <p><%= @garage.city %></p>
+            <hr>
+            <h5><strong>Street</strong></h5>
+            <p><%= @garage.street %></p>
+            <hr>
+            <h5><strong>Price</strong></h5>
+            <p><%= @garage.price %>€</p>
+            <hr>
+            <h5><strong>Description</strong></h5>
+            <p><%= @garage.description %></p>
+            <hr>
+            <% if current_user == @garage.user %>
+              <center><%= link_to "Delete", garage_path(@garage), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'btn btn-flat btn-lg' %>
+              <%= link_to "Edit", edit_garage_path(@garage), class: 'btn btn-flat btn-lg' %></center>
+            <% elsif current_user %>
+              <center><%= link_to "Book", new_garage_booking_path(@garage), class: 'btn btn-flat btn-lg' %></center>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-</div>
-</div>
 <div class="footer">
-    <div class="links">
+  <div class="links">
       <a href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
       <a href="#"><i class="fab fa-fw fa-github"></i></a>
       <a href="#"><i class="fab fa-fw fa-twitter"></i></a>
       <a href="#"><i class="fab fa-fw fa-instagram"></i></a>
       <p>This website was coded by the team Dario</i></p>
-
-    </div>
   </div>
+</div>
