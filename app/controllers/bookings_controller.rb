@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to garages_path, notice: "Your booking has been successful!"
     else
-      redirect_to garage_path(@garage), alert: "#{@booking.errors.messages[:garagr].first}"
+      render :new, status: :unprocessable_entity
     end
   end
 

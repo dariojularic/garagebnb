@@ -2,26 +2,39 @@
 
 <br>
 <div>
-<h3>Your bookings</h3>
-<% @user.bookings.each do |booking| %>
-  <ul>
-    <li>City Name:  <%= booking.garage.city %></li>
-    <li>Street Name:  <%= booking.garage.street %></li>
-    <li>Booked From:  <%= booking.start_date %></li>
-    <li>Booked To:  <%= booking.end_date %></li>
-  </ul>
-<% end %>
-</div>
-
-<h3>Bookings made for your garage</h3>
-<% @garages.each do |garage| %>
-  <% garage.bookings.each do |booking| %>
+  <h3>Your bookings</h3>
+  <% @user.bookings.each do |booking| %>
     <ul>
-      <li>Contact Details:  <%= booking.user.email %></li>
-      <li>City Name:  <%= booking.garage.city %></li>
+      <li>City Name:  <%= link_to booking.garage.city, garage_path(booking.garage) %></li>
       <li>Street Name:  <%= booking.garage.street %></li>
       <li>Booked From:  <%= booking.start_date %></li>
       <li>Booked To:  <%= booking.end_date %></li>
     </ul>
   <% end %>
+</div>
+
+<div>
+  <h3>Bookings made for your garage</h3>
+  <% @garages.each do |garage| %>
+    <% garage.bookings.each do |booking| %>
+      <ul>
+        <li>Contact Details:  <%= booking.user.email %></li>
+        <li>City Name:  <%= link_to booking.garage.city, garage_path(booking.garage) %></li>
+        <li>Street Name:  <%= booking.garage.street %></li>
+        <li>Booked From:  <%= booking.start_date %></li>
+        <li>Booked To:  <%= booking.end_date %></li>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+<h3>Your garages</h3>
+<% @user.garages.each do |garage| %>
+  <ul>
+    <li>City:  <%= link_to garage.city, garage_path(garage) %></li>
+    <li>Street:  <%= garage.street %></li>
+    <li>Price:  <%= garage.price %>€</li>
+  </ul>
 <% end %>
+</div>
