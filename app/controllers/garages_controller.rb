@@ -2,7 +2,11 @@ class GaragesController < ApplicationController
   # before_action :set_garage
 
   def index
-    @garages = Garage.all
+    if params[:query].present?
+      @garages = Garage.where("city ILIKE :query OR street ILIKE :query", query: "%#{params[:query]}%")
+    else
+      @garages = Garage.all
+    end
   end
 
   def new
